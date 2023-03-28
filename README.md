@@ -45,7 +45,7 @@ public interface EventHandler { // Operations that will be executed when the eve
     void handle(Event event);
 }
 
-public interface EventDispatcher { // Register the event and the operations, and dispatch/fire the event to execute the operations
+public interface EventDispatcher { // Register the event and the operations, and dispatch/fire the event to execute the operations. It has to be implemented.
     void dispatch(Event event) throws Exception;
     
     void register(String eventName, EventHandler eventHandler) throws Exception;
