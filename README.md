@@ -31,4 +31,26 @@
     ```
   * You can keep the data in different data bases (not obliged, but sometimes recommended, depending on the situation). One for Writer and other for read. The writer can be a SQL (Ex: category: 1, product: 1) and the Reader can the NoSQL (Ex: category: toy, product: car)
   * You can use the "Event Sourcing" instead of doing the "Reader"
-  * 
+
+## Interface for events
+
+```
+public interface Event { // Event (Loaded data)
+    String getName();
+    LocalDateTime getDateTime();
+    Object getPayload();
+}
+
+public interface EventHandler { // Operations that will be executed when the event is called
+    void handle(Event event);
+}
+
+public interface EventDispatcher { // Register the event and the operations, and dispatch/fire the event to execute the operations
+    void dispatch(Event event) throws Exception;
+    
+    void register(String eventName, EventHandler eventHandler) throws Exception;
+    void remove(String eventName, EventHandler eventHandler) throws Exception;
+    void has(String eventName, EventHandler eventHandler) throws Exception;
+    void clear(String eventName, EventHandler eventHandler) throws Exception;
+}
+```
