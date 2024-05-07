@@ -1,7 +1,7 @@
 # EDA - Event Driven Architecture
 
 ## Events: 
-- An event is something that happened in the past
+- An event is something that happened in the past (ex: "ride completed")
 - It leaves collateral effects (Ex: car door opened -> turn on the light inside) 
 - It can work internally and externally in the software
 - Domain Events: a change in the application state / business logic.
@@ -56,3 +56,15 @@ public interface EventDispatcher { // Register the event and the operations, and
 ```
 
 - Unit of Work: Speaking about databases, it is a way to consist of the data in only one transaction. If something fails, rollback is needed. (usually we use @Transactional in Spring)
+
+## Branas
+
+### Patterns:
+- Retry: 
+- FallBack: 
+- SAGA:
+
+### Types of Transactions
+- Pivot Transaction: The flux will go or will be aborted ("go" or "no go") (ex: cancel the order)
+- Compensable Transaction: Is rollbacked in case of whole transaction is aborted
+- Retriable Transaction: Guarantee of execution and can recover of a possible fail or unavailability. (ex: reprocess the order)
