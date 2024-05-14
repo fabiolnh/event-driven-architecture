@@ -32,32 +32,28 @@
   * You can keep the data in different databases (not obliged, but sometimes recommended, depending on the situation). One for Writer and other for reading. The writer can be a SQL (Ex: category: 1, product: 1) and the Reader can the NoSQL (Ex: category: toy, product: car)
   * You can use the "Event Sourcing" instead of doing the "Reader"
 
-## Interface for events
 
-```
-public interface Event { // Event (Loaded data)
-    String getName();
-    LocalDateTime getDateTime();
-    Object getPayload();
-}
 
-public interface EventHandler { // Operations that will be executed when the event is called
-    void handle(Event event);
-}
-
-public interface EventDispatcher { // Register the event and the operations, and dispatch/fire the event to execute the operations. It has to be implemented.
-    void dispatch(Event event) throws Exception;
-    
-    void register(String eventName, EventHandler eventHandler) throws Exception;
-    void remove(String eventName, EventHandler eventHandler) throws Exception;
-    void has(String eventName, EventHandler eventHandler) throws Exception;
-    void clear(String eventName, EventHandler eventHandler) throws Exception;
-}
-```
+## Branas
 
 - Unit of Work: Speaking about databases, it is a way to consist of the data in only one transaction. If something fails, rollback is needed. (usually we use @Transactional in Spring)
 
-## Branas
+
+### CQRS:
+
+- Case 1: Instead of getting information from a database calling different services, create a database with a read replica and get the information from it.
+- Case 2: Even if it is the same service, create a read replica and get it from it.
+- Case 3: Instead the UseCase gets a lot of repositories from its own service, creating its own select.
+- Case 4: To create a read replica (if you are not using AWS that creates automatically the read replica), you can create events from the writer database and send it to the read database
+
+- Solutions
+  * A different Project Pattern to access the database
+  * Create snapshots in the database with specific information (ex:
+  * Projection Table for reading
+  * Materialize Views
+  * Separate Database of Read and Write
+  * Use specific database for the purpose
+
 
 ### Patterns:
 - Retry: 
