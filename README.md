@@ -41,6 +41,8 @@
 
 ### CQRS:
 
+- It is a model. There can be several examples. Using the same database or not.
+
 - Example 1: Instead of getting information from a database calling different services, create a database with a read replica and get the information from it.
 - Example 2: Even if it is the same service, create a read replica and get it from it.
 - Example 3: Instead the UseCase gets a lot of repositories from its own service, creating its own select.
