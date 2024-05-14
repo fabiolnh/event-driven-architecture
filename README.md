@@ -23,10 +23,10 @@
         Use Cases
           Repositories
     ```
-  * Query (read): Queries. You forget the Application Domain and query only what you need.
+  * Query (read): Queries. You forget the Application Domain and the Repository, and then you query only what you need.
     ```
     Query
-      UseCases (Can be the controller)
+      UseCases
         DAOs
     ```
   * You can keep the data in different databases (not obliged, but sometimes recommended, depending on the situation). One for Writer and other for reading. The writer can be a SQL (Ex: category: 1, product: 1) and the Reader can the NoSQL (Ex: category: toy, product: car)
