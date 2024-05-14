@@ -55,12 +55,12 @@
   * Use specific database for the purpose
 
 
-### Patterns:
+### Events - Patterns:
 - Retry: 
 - FallBack: 
 - SAGA:
 
-### Types of Transactions
+### Events - Types of Transactions
 - Pivot Transaction: The flux will go or will be aborted ("go" or "no go") (ex: cancel the order)
 - Compensable Transaction: Is rollbacked in case of whole transaction is aborted
 - Retriable Transaction: Guarantee of execution and can recover of a possible fail or unavailability. (ex: reprocess the order)
