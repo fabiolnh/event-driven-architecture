@@ -31,7 +31,7 @@
     ```
   * You can keep the data in different databases (not obliged, but sometimes recommended, depending on the situation). One for Writer and other for reading. The writer can be a SQL (Ex: category: 1, product: 1) and the Reader can the NoSQL (Ex: category: toy, product: car)
   * You can use the "Event Sourcing" instead of doing the "Reader"
-
+  * OBS: Repository in Domain Model is different from Repository of ORM. Repository from Domain Model always return the Domain from DDD. (The repository from ORM always return its orm model).
 
 
 ## Branas
