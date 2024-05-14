@@ -41,10 +41,10 @@
 
 ### CQRS:
 
-- Case 1: Instead of getting information from a database calling different services, create a database with a read replica and get the information from it.
-- Case 2: Even if it is the same service, create a read replica and get it from it.
-- Case 3: Instead the UseCase gets a lot of repositories from its own service, creating its own select.
-- Case 4: To create a read replica (if you are not using AWS that creates automatically the read replica), you can create events from the writer database and send it to the read database
+- Example 1: Instead of getting information from a database calling different services, create a database with a read replica and get the information from it.
+- Example 2: Even if it is the same service, create a read replica and get it from it.
+- Example 3: Instead the UseCase gets a lot of repositories from its own service, creating its own select.
+- Example 4: To create a read replica (if you are not using AWS that creates automatically the read replica), you can create events from the writer database and send it to the read database
 
 - Solutions
   * A different Project Pattern to access the database
