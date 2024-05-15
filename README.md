@@ -58,9 +58,9 @@
 
 
 ### Events - Patterns:
-- Retry: 
-- FallBack: 
-- SAGA:
+- Retry: Attempt one or more tries at short intervals. It can solve simple problems such as packet loss, network oscillation, and deploying at the wrong time.
+- Fallback: Attempt to use another service. For example, an e-commerce site could attempt transactions with several credit card acquirers to avoid unavailability (or even blocking).
+- SAGA: Responsible for managing a long transaction through a sequence of local transactions.
 
 ### Events - Types of Transactions
 - Pivot Transaction: The flux will go or will be aborted ("go" or "no go") (ex: cancel the order)
