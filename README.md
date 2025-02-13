@@ -16,7 +16,7 @@
 - Event Collaboration Method: All the Systems are sending events all the moments to all the systems. This way all the systems have the information that they need, and they do not neet to get this information to do something
 
 - CQRS (Command and Query Responsibility Segregation): It's an idea. It is not a standard implementation format.
-  * Commands (write and update): This is a user change intent. Ex: "Create a product" and it is done. It involves business logic
+  * Commands (write and update): This is a user change intent. Ex: "Create a product" and it is done (You do not query it to recover the ID to return to the caller. You throw an exception if get some error). It involves business logic
     ```
     Domain
       Commands
